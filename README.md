@@ -30,6 +30,8 @@ https://qaq.al/x.txt ——更新于2024.4.2
 
 ### 手动添加
 其一: 页面右键菜单 -> Tampermonkey -> qtmdBili -> 更新营销号黑名单
+
 其二: 导航栏/菜单 -> 扩展程序 -> Tampermonkey -> qtmdBili -> 更新营销号黑名单
+
 通过F12控制台能观察脚本执行进度
 
