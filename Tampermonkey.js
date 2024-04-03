@@ -62,6 +62,6 @@
         }
         console.log('ok了老铁');
     }
-
+    
     GM_registerMenuCommand("更新营销号黑名单", updateBlackList);
 })();
