@@ -1,6 +1,6 @@
 /**
  * @author ius.
- * @date 2024/4/1
+ * @date 2024/4/4
  * @introduction qtmdAD
  */
 function getCookie(aim) {
@@ -13,16 +13,17 @@ function getCookie(aim) {
         }
     }
 }
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function gout(uid) {
-    var data = "fid="+uid+"&act=5&csrf="+getCookie("bili_jct");
+    var data = "fid=" + uid + "&act=5&csrf=" + getCookie("bili_jct");
     var xhr = new XMLHttpRequest();
     xhr.withCredentials = true;
-    xhr.addEventListener("readystatechange", function() {
-        if(this.readyState === 4) {
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === 4) {
             console.log(this.responseText);
         }
     });
@@ -32,11 +33,18 @@ function gout(uid) {
 }
 
 (async function () {
-    const uid = '将账号放入此处'
-    const uid_list = uid.split("^")
-    for (const uidListKey in uid_list) {
-        gout(uid_list[uidListKey]);
-        await sleep(200);
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://qaq.al/x.php?v=x', true);
+    xhr.onreadystatechange = async function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            const uid_list = xhr.responseText.split("^")
+            for (const uidListKey in uid_list) {
+                gout(uid_list[uidListKey]);
+                await sleep(200);
+            }
+            console.log("ok了老铁")
+        }
     }
-    console.log("ok了老铁")
+    xhr.send();
 })()
+
