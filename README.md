@@ -16,6 +16,7 @@
 # 油猴脚本
 ### 搜索添加
 在GreasyFork中搜索项目名称**qtmdBili**，点击安装即可。
+https://greasyfork.org/zh-CN/scripts/491560-qtmdbili
 
 ### 手动添加
 其一: 页面右键菜单 -> Tampermonkey -> qtmdBili -> 更新营销号黑名单
